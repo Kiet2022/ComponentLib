@@ -1,0 +1,16 @@
+Variant:
++Default(text)
++Primary
++Secondary
+
+
+
+Theme:
++Dark
++White
+
+
+SizeButton:
++Small
++Large
++ExtraLarge
