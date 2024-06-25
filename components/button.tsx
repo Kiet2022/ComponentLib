@@ -85,7 +85,7 @@ const Button: React.FC<ButtonProps> = ({
 
   if (!label) {
     return (
-      <button className={btnStyle + " !p-0"} disabled={disabled}>
+      <button className={btnStyle + " !p-0"} disabled={disabled} onClick={onClick}>
         {leftIcon && <div className={iconSize}>{leftIcon}</div>}
         {rightIcon && <div className={iconSize}>{rightIcon}</div>}
       </button>
@@ -94,13 +94,13 @@ const Button: React.FC<ButtonProps> = ({
 
   if (loading) {
     return (
-      <button className={btnStyle} disabled={loading}>
+      <button className={btnStyle} disabled={loading} onClick={onClick}>
         Loading...
       </button>
     );
   }
   return (
-    <button className={btnStyle} disabled={disabled}>
+    <button className={btnStyle} disabled={disabled} onClick={onClick}>
       {leftIcon && <div className={iconSize}>{leftIcon}</div>}
       {label}
       {rightIcon && <div className={iconSize}>{rightIcon}</div>}
