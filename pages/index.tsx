@@ -3,265 +3,163 @@ import { PlusHeroIcon } from "@/public/assets/icons";
 
 export default function ButtonLibrary() {
   return (
-    <div className="bg-slate-400 h-screen flex flex-col gap-10 pt-10">     
+    <div className="bg-slate-400 h-screen flex flex-col gap-10 pt-10">
       <div className="flex flex-row gap-5 justify-center">
-        <Button label="tezt" variant="primary" theme="white" size="xl" />
-        <Button label="tezt" variant="primary" theme="white" size="xl" loading={true}/>
+        <Button label="tezt" variant="primary-white" size="xl" />
+        <Button label="tezt" variant="primary-white" size="xl" loading={true} />
         <Button
           label="tezt"
-          variant="primary"
-          theme="white"
+          variant="primary-white"
           size="xl"
-          leftIcon={<PlusHeroIcon />}
+          leftIcon={<PlusHeroIcon className={'w-6'}/>}
         />
         <Button
           label="tezt"
-          variant="primary"
-          theme="white"
+          variant="primary-white"
           size="xl"
-          rightIcon={<PlusHeroIcon />}
+          rightIcon={<PlusHeroIcon className={'w-6'}/>}
         />
         <Button
           label="test"
-          variant="primary"
-          theme="white"
+          variant="primary-white"
           size="xl"
-          rightIcon={<PlusHeroIcon />}
+          rightIcon={<PlusHeroIcon className={'w-6'}/>}
           disabled={true}
         />
-        <Button
-          variant="primary"
-          theme="white"
-          size="xl"
-          rightIcon={<PlusHeroIcon />}
-        />
+        <Button variant="primary-white" size="xl" rightIcon={<PlusHeroIcon className={'w-4'}/>} />
 
         <Button
           label="tezt"
-          variant="primary"
-          theme="white"
+          variant="primary-white"
           size="lg"
-          rightIcon={<PlusHeroIcon />}
+          rightIcon={<PlusHeroIcon className={'w-4'}/>}
         />
-        <Button
-          variant="primary"
-          theme="white"
-          size="lg"
-          rightIcon={<PlusHeroIcon />}
-        />
+        <Button variant="primary-white" size="lg" rightIcon={<PlusHeroIcon className={'w-4'}/>} />
         <Button
           label="tezt"
-          variant="primary"
-          theme="white"
+          variant="primary-white"
           size="sm"
-          rightIcon={<PlusHeroIcon />}
+          rightIcon={<PlusHeroIcon className={'w-4'}/>}
         />
-        <Button
-          variant="primary"
-          theme="white"
-          size="sm"
-          rightIcon={<PlusHeroIcon />}
-        />
+        <Button variant="primary-white" size="sm" rightIcon={<PlusHeroIcon className={'w-4'}/>} />
       </div>
 
       <div className="flex flex-row gap-5 justify-center">
-        <Button label="tezt" variant="primary" theme="dark" size="xl" />
-        <Button label="tezt" variant="primary" theme="dark" size="xl" loading={true} />
+        <Button label="tezt" variant="primary-dark" size="xl" />
+        <Button label="tezt" variant="primary-dark" size="xl" loading={true} />
         <Button
           label="tezt"
-          variant="primary"
-          theme="dark"
+          variant="primary-dark"
           size="xl"
-          leftIcon={<PlusHeroIcon />}
+          leftIcon={<PlusHeroIcon className={'w-6'}/>}
         />
         <Button
           label="tezt"
-          variant="primary"
-          theme="dark"
+          variant="primary-dark"
           size="xl"
-          rightIcon={<PlusHeroIcon />}
+          rightIcon={<PlusHeroIcon className={'w-6'} />}
         />
         <Button
           label="test"
-          variant="primary"
-          theme="dark"
+          variant="primary-dark"
           size="xl"
-          rightIcon={<PlusHeroIcon />}
+          rightIcon={<PlusHeroIcon  className={'w-6'}/>}
           disabled={true}
         />
-        <Button
-          variant="primary"
-          theme="dark"
-          size="xl"
-          rightIcon={<PlusHeroIcon />}
-        />
+        <Button variant="primary-dark" size="xl" rightIcon={<PlusHeroIcon  className={'w-4'}/>} />
 
         <Button
           label="tezt"
-          variant="primary"
-          theme="dark"
+          variant="primary-dark"
           size="lg"
-          rightIcon={<PlusHeroIcon />}
+          rightIcon={<PlusHeroIcon className={'w-4'}/>}
         />
-        <Button
-          variant="primary"
-          theme="dark"
-          size="lg"
-          rightIcon={<PlusHeroIcon />}
-        />
+        <Button variant="primary-dark" size="lg" rightIcon={<PlusHeroIcon className={'w-4'}/>} />
         <Button
           label="tezt"
-          variant="primary"
-          theme="dark"
+          variant="primary-dark"
           size="sm"
-          rightIcon={<PlusHeroIcon />}
+          rightIcon={<PlusHeroIcon className={'w-4'}/>}
         />
-        <Button
-          variant="primary"
-          theme="dark"
-          size="sm"
-          rightIcon={<PlusHeroIcon />}
-        />
+        <Button variant="primary-dark" size="sm" rightIcon={<PlusHeroIcon className={'w-4'}/>} />
       </div>
 
       <div className="flex flex-row gap-5 justify-center p-5">
-        <Button label="tezt" variant="secondary" theme="dark" size="xl" />
-        <Button label="tezt" variant="secondary" theme="dark" size="xl" loading={true}/>
+        <Button label="tezt" variant="secondary-dark" size="xl" />
+        <Button label="tezt" variant="secondary-dark" size="xl" loading={true} />
         <Button
           label="tezt"
-          variant="secondary"
-          theme="dark"
+          variant="secondary-dark"
           size="xl"
-          leftIcon={<PlusHeroIcon />}
+          leftIcon={<PlusHeroIcon className={'w-4'}/>}
         />
         <Button
           label="tezt"
-          variant="secondary"
-          theme="dark"
+          variant="secondary-dark"
           size="xl"
-          rightIcon={<PlusHeroIcon />}
+          rightIcon={<PlusHeroIcon className={'w-4'}/>}
         />
         <Button
           label="test"
-          variant="secondary"
-          theme="dark"
+          variant="secondary-dark"
           size="xl"
-          rightIcon={<PlusHeroIcon />}
+          rightIcon={<PlusHeroIcon className={'w-4'}/>}
           disabled={true}
         />
-        <Button
-          variant="secondary"
-          theme="dark"
-          size="xl"
-          rightIcon={<PlusHeroIcon />}
-        />
+        <Button variant="secondary-dark" size="xl" rightIcon={<PlusHeroIcon className={'w-4'}/>} />
 
         <Button
           label="tezt"
-          variant="secondary"
-          theme="dark"
+          variant="secondary-dark"
           size="lg"
-          rightIcon={<PlusHeroIcon />}
+          rightIcon={<PlusHeroIcon className={'w-4'}/>}
         />
-        <Button
-          variant="secondary"
-          theme="dark"
-          size="lg"
-          rightIcon={<PlusHeroIcon />}
-        />
+        <Button variant="secondary-dark" size="lg" rightIcon={<PlusHeroIcon className={'w-4'}/>} />
         <Button
           label="tezt"
-          variant="secondary"
-          theme="dark"
+          variant="secondary-dark"
           size="sm"
-          rightIcon={<PlusHeroIcon />}
+          rightIcon={<PlusHeroIcon className={'w-4'}/>}
         />
-        <Button
-          variant="secondary"
-          theme="dark"
-          size="sm"
-          rightIcon={<PlusHeroIcon />}
-        />
+        <Button variant="secondary-dark" size="sm" rightIcon={<PlusHeroIcon className={'w-4'}/>} />
       </div>
 
       <div className="flex flex-row gap-5 justify-center">
-        <Button label="tezt" theme="dark" size="xl" />
-        <Button label="tezt" theme="dark" size="xl" loading={true}/>
-        <Button
-          label="tezt"
-          theme="dark"
-          size="xl"
-          leftIcon={<PlusHeroIcon />}
-        />
-        <Button
-          label="tezt"
-          theme="dark"
-          size="xl"
-          rightIcon={<PlusHeroIcon />}
-        />
+        <Button label="tezt" size="xl" />
+        <Button label="tezt" size="xl" loading={true} />
+        <Button label="tezt" size="xl" leftIcon={<PlusHeroIcon  className={'w-4'}/>} />
+        <Button label="tezt" size="xl" rightIcon={<PlusHeroIcon  className={'w-4'}/>} />
         <Button
           label="test"
-          theme="dark"
           size="xl"
-          rightIcon={<PlusHeroIcon />}
+          rightIcon={<PlusHeroIcon  className={'w-4'}/>}
           disabled={true}
         />
-        <Button theme="dark" size="xl" rightIcon={<PlusHeroIcon />} />
+        <Button size="xl" rightIcon={<PlusHeroIcon  className={'w-4'}/>} />
 
-        <Button
-          label="tezt"
-          theme="dark"
-          size="lg"
-          rightIcon={<PlusHeroIcon />}
-        />
-        <Button theme="dark" size="lg" rightIcon={<PlusHeroIcon />} />
-        <Button
-          label="tezt"
-          theme="dark"
-          size="sm"
-          rightIcon={<PlusHeroIcon />}
-        />
-        <Button theme="dark" size="sm" rightIcon={<PlusHeroIcon />} />
+        <Button label="tezt" size="lg" rightIcon={<PlusHeroIcon  className={'w-4'}/>} />
+        <Button size="lg" rightIcon={<PlusHeroIcon  className={'w-4'}/>} />
+        <Button label="tezt" size="sm" rightIcon={<PlusHeroIcon  className={'w-4'}/>} />
+        <Button size="sm" rightIcon={<PlusHeroIcon  className={'w-4'}/>} />
       </div>
 
       <div className="flex flex-row gap-5 justify-center">
-        <Button label="tezt" theme="white" size="xl" />
-        <Button label="tezt" theme="white" size="xl" loading={true}/>
-        <Button
-          label="tezt"
-          theme="white"
-          size="xl"
-          leftIcon={<PlusHeroIcon />}
-        />
-        <Button
-          label="tezt"
-          theme="white"
-          size="xl"
-          rightIcon={<PlusHeroIcon />}
-        />
+        <Button label="sfdsfe" size="xl" className="text-white font-5xl"/>
+        <Button label="tezt" size="xl" loading={true} />
+        <Button label="tezt" size="xl" leftIcon={<PlusHeroIcon  className={'w-4'}/>} />
+        <Button label="tezt" size="xl" rightIcon={<PlusHeroIcon  className={'w-4'}/>} />
         <Button
           label="test"
-          theme="white"
           size="xl"
-          rightIcon={<PlusHeroIcon />}
+          rightIcon={<PlusHeroIcon  className={'w-4'}/>}
           disabled={true}
         />
-        <Button theme="white" size="xl" rightIcon={<PlusHeroIcon />} />
+        <Button size="xl" rightIcon={<PlusHeroIcon  className={'w-4'}/>} />
 
-        <Button
-          label="tezt"
-          theme="white"
-          size="lg"
-          rightIcon={<PlusHeroIcon />}
-        />
-        <Button theme="dark" size="lg" rightIcon={<PlusHeroIcon />} />
-        <Button
-          label="tezt"
-          theme="white"
-          size="sm"
-          rightIcon={<PlusHeroIcon />}
-        />
-        <Button theme="white" size="sm" rightIcon={<PlusHeroIcon />} />
+        <Button label="tezt" size="lg" rightIcon={<PlusHeroIcon  className={'w-4'}/>} />
+        <Button size="lg" rightIcon={<PlusHeroIcon  className={'w-4'}/>} />
+        <Button label="tezt" size="sm" rightIcon={<PlusHeroIcon  className={'w-4'}/>} />
+        <Button size="sm" rightIcon={<PlusHeroIcon  className={'w-4'}/>} />
       </div>
     </div>
   );
