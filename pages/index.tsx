@@ -3,9 +3,10 @@ import { PlusHeroIcon } from "@/public/assets/icons";
 
 export default function ButtonLibrary() {
   return (
-    <div className="bg-slate-400 h-screen flex flex-col gap-10 pt-10">
+    <div className="bg-slate-400 h-screen flex flex-col gap-10 pt-10">     
       <div className="flex flex-row gap-5 justify-center">
         <Button label="tezt" variant="primary" theme="white" size="xl" />
+        <Button label="tezt" variant="primary" theme="white" size="xl" loading={true}/>
         <Button
           label="tezt"
           variant="primary"
@@ -65,6 +66,7 @@ export default function ButtonLibrary() {
 
       <div className="flex flex-row gap-5 justify-center">
         <Button label="tezt" variant="primary" theme="dark" size="xl" />
+        <Button label="tezt" variant="primary" theme="dark" size="xl" loading={true} />
         <Button
           label="tezt"
           variant="primary"
@@ -124,6 +126,7 @@ export default function ButtonLibrary() {
 
       <div className="flex flex-row gap-5 justify-center p-5">
         <Button label="tezt" variant="secondary" theme="dark" size="xl" />
+        <Button label="tezt" variant="secondary" theme="dark" size="xl" loading={true}/>
         <Button
           label="tezt"
           variant="secondary"
@@ -183,6 +186,7 @@ export default function ButtonLibrary() {
 
       <div className="flex flex-row gap-5 justify-center">
         <Button label="tezt" theme="dark" size="xl" />
+        <Button label="tezt" theme="dark" size="xl" loading={true}/>
         <Button
           label="tezt"
           theme="dark"
@@ -222,6 +226,7 @@ export default function ButtonLibrary() {
 
       <div className="flex flex-row gap-5 justify-center">
         <Button label="tezt" theme="white" size="xl" />
+        <Button label="tezt" theme="white" size="xl" loading={true}/>
         <Button
           label="tezt"
           theme="white"
