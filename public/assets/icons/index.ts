@@ -1,2 +1,2 @@
-export * from './PlusIcon'
+export * from './PlusHeroIcon'
 export * from './SpinnerIcon'
