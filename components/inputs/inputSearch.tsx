@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import Icon from "../Icon/icon";
+import Icon from "../icons/icon";
 import { IInputProps } from "./types";
 import { getInputState, inputStateStyle } from "./constants";
 

@@ -7,9 +7,9 @@ import {
   getInputState,
   inputStateStyle,
   phoneCodes,
-  useOutsideClick,
 } from "./constants";
 import { twMerge } from "tailwind-merge";
+import { useOutsideClick } from "@/shared";
 
 export const DropListInput = ({
   label,
@@ -40,7 +40,6 @@ export const DropListInput = ({
   );
 
   function formatInputData(data: string): string {
-    // const isNumeric = (char: string) => /^[+-]?\d+(\.\d+)?$/.test(char);
     const isNumeric = (char: string) => /^\d$/.test(char);
     const isCountryCode = (str: string) => /^(\d{1,3})$/.test(str);
     let formattedData = "";
@@ -65,7 +64,6 @@ export const DropListInput = ({
   function onSelectOpt(countryIndex: number) {
     setSelectedCountry(phoneCodes[countryIndex]);
     setIsOpenMenu(false);
-
     setInputValue(`+${phoneCodes[countryIndex].code}`);
   }
 
