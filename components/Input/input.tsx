@@ -22,8 +22,6 @@ export const Input = ({
     string | number | readonly string[] | undefined
   >(props.value ? props.value : "");
 
-
-
   const inputStyle = twMerge(
     "input-box",
     className,
@@ -36,7 +34,7 @@ export const Input = ({
     }
   }
   return (
-    <div className="my-4">
+    <div>
       <div className="h-4 text-white mb-2">
         {label && label}
         {props.required && (
@@ -50,7 +48,7 @@ export const Input = ({
           {...props}
           autoComplete="off"
           disabled={loading || disabled}
-          className="input"
+          className="input !bg-transparent !focus:outline !placeholder:bg-transparent"
           onChange={(e) => {
             onHandleChange(e);
           }}
@@ -58,29 +56,32 @@ export const Input = ({
         {rightIcon && <div className="ml-2">{rightIcon} </div>}
       </div>
 
-      <div className="text-red-500">
-        {error && (
-          <span className="flex flex-row gap-2 items-center">
-            <ErrorSignHeroIcon className="w-4 pt-1" />
-            {error}
-          </span>
-        )}
-      </div>
-      <div className="text-green-500">
-        {success && (
-          <span className="flex flex-row gap-2 items-center">
-            <CheckedHeroIcon className="w-4 pt-1" />
-            {success}
-          </span>
-        )}
-      </div>
-      <div className="text-green-500">
-        {loading && (
-          <span className="flex flex-row gap-2 items-center">
-            <SpinnerIcon className="w-4 pt-1" />
-            Processing...
-          </span>
-        )}
+      {/* ///////UNDER NOTIFY///////// */}
+      <div className="h-5">
+        <div className="text-red-500">
+          {error && (
+            <span className="flex flex-row gap-2 items-center">
+              <ErrorSignHeroIcon className="w-4 pt-1" />
+              {error}
+            </span>
+          )}
+        </div>
+        <div className="text-green-500">
+          {success && (
+            <span className="flex flex-row gap-2 items-center">
+              <CheckedHeroIcon className="w-4 pt-1" />
+              {success}
+            </span>
+          )}
+        </div>
+        <div className="text-green-500">
+          {loading && (
+            <span className="flex flex-row gap-2 items-center">
+              <SpinnerIcon className="w-4 pt-1" />
+              Processing...
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -86,6 +86,7 @@ export default function InputLib() {
               value={values.email}
               error={errors.email && touched.email ? errors.email : null}
               loading={isSubmitting}
+              required
             />
 
             <InputPassword

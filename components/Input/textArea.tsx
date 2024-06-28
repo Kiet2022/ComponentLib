@@ -30,9 +30,9 @@ export const TextArea = ({
   );
 
   function onHandleChange(e: ChangeEvent<HTMLTextAreaElement>) {
-    if(wordLimit&& e.target.value.length>wordLimit){
-      e.target.value = e.target.value.substring(0, e.target.value.length-1)
-      return
+    if (wordLimit && e.target.value.length > wordLimit) {
+      e.target.value = e.target.value.substring(0, e.target.value.length - 1);
+      return;
     }
     if (props.onChange) {
       props.onChange(e);
@@ -42,8 +42,9 @@ export const TextArea = ({
   }
 
   return (
-    <div className="my-4">
-      <div className="h-4 text-white mb-2 relative">
+    <div>
+      {/* ///////TOP LABEL/////// */}
+      <div className="text-white mb-2 relative">
         {label && label}
         {props.required && (
           <span className={error ? "text-red-500" : "text-green-500"}> *</span>
@@ -55,6 +56,7 @@ export const TextArea = ({
         )}
       </div>
 
+      {/* ////BODY///// */}
       <div className={inputStyle}>
         <textarea
           {...props}
@@ -70,29 +72,32 @@ export const TextArea = ({
         )}
       </div>
 
-      <div className="text-red-500 relative">
-        {error && (
-          <span className="flex flex-row gap-2 items-center">
-            <ErrorSignHeroIcon className="w-4 pt-1" />
-            {error}
-          </span>
-        )}
-      </div>
-      <div className="text-green-500">
-        {success && (
-          <span className="flex flex-row gap-2 items-center">
-            <CheckedHeroIcon className="w-4 pt-1" />
-            {success}
-          </span>
-        )}
-      </div>
-      <div className="text-green-500">
-        {loading && (
-          <span className="flex flex-row gap-2 items-center">
-            <SpinnerIcon className="w-4 pt-1" />
-            Processing...
-          </span>
-        )}
+      {/* ///////UNDER NOTIFY///////// */}
+      <div className="h-5">
+        <div className="text-red-500 relative">
+          {error && (
+            <span className="flex flex-row gap-2 items-center">
+              <ErrorSignHeroIcon className="w-4 pt-1" />
+              {error}
+            </span>
+          )}
+        </div>
+        <div className="text-green-500">
+          {success && (
+            <span className="flex flex-row gap-2 items-center">
+              <CheckedHeroIcon className="w-4 pt-1" />
+              {success}
+            </span>
+          )}
+        </div>
+        <div className="text-green-500">
+          {loading && (
+            <span className="flex flex-row gap-2 items-center">
+              <SpinnerIcon className="w-4 pt-1" />
+              Processing...
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );

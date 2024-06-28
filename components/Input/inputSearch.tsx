@@ -22,7 +22,7 @@ export function InputSearch({
     className,
     inputStateStyle[getInputState(error, inputValue)]
   );
-  console.log('search er ', error)
+  console.log("search er ", error);
   function onHandleChange(e: ChangeEvent<HTMLInputElement>) {
     setInputValue(e.target.value);
     if (props.onChange) {
@@ -30,8 +30,10 @@ export function InputSearch({
     }
   }
   return (
-    <div className="my-4">
-      <div className="h-4 text-white mb-2">{label && label}</div>
+    <div>
+      {/* ///////TOP LABEL/////// */}
+      <div className=" text-white mb-2">{label && label}</div>
+      {/* ////BODY///// */}
       <div className={inputStyle}>
         <Icon name="search" className="mr-2" />
         <input
@@ -44,7 +46,8 @@ export function InputSearch({
           }}
         />
       </div>
-      <div className={"text-red-500 h-4 flex flex-row"}>{error && error}</div>
+      {/* ///////UNDER NOTIFY///////// */}
+      <div className="text-red-500 h-5 flex flex-row">{error && error}</div>
     </div>
   );
 }

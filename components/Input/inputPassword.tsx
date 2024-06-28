@@ -30,7 +30,6 @@ export const InputPassword = ({
     inputStateStyle[getInputState(error, inputValue)]
   );
 
-  
   function onHandleHideOrShowPassword() {
     if (isHidePassword) {
       props.type = "text";
@@ -48,8 +47,11 @@ export const InputPassword = ({
     }
   }
   return (
-    <div className="my-4">
-      <div className="h-4 text-white mb-2">{label && label}</div>
+    <div >
+      {/* ///////TOP LABEL/////// */}
+      <div className="text-white mb-2">{label && label}</div>
+
+      {/* ////BODY///// */}
       <div className={inputStyle}>
         {leftIcon && <div className="mr-2">{leftIcon}</div>}
         <input
@@ -72,30 +74,33 @@ export const InputPassword = ({
         </button>
       </div>
 
-      <div className="text-red-500">
-        {error && (
-          <span className="flex flex-row gap-2 items-center">
-            <ErrorSignHeroIcon className="w-4 pt-1" />
-            {error}
-          </span>
-        )}
-      </div>
+      {/* ///////UNDER NOTIFY///////// */}
+      <div className="h-5">
+        <div className="text-red-500">
+          {error && (
+            <span className="flex flex-row gap-2 items-center">
+              <ErrorSignHeroIcon className="w-4 pt-1" />
+              {error}
+            </span>
+          )}
+        </div>
 
-      <div className="text-green-500">
-        {success && (
-          <span className="flex flex-row gap-2 items-center">
-            <CheckedHeroIcon className="w-4 pt-1" />
-            {success}
-          </span>
-        )}
-      </div>
-      <div className="text-green-500">
-        {loading && (
-          <span className="flex flex-row gap-2 items-center">
-            <SpinnerIcon className="w-4 pt-1" />
-            Processing...
-          </span>
-        )}
+        <div className="text-green-500">
+          {success && (
+            <span className="flex flex-row gap-2 items-center">
+              <CheckedHeroIcon className="w-4 pt-1" />
+              {success}
+            </span>
+          )}
+        </div>
+        <div className="text-green-500">
+          {loading && (
+            <span className="flex flex-row gap-2 items-center">
+              <SpinnerIcon className="w-4 pt-1" />
+              Processing...
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );
