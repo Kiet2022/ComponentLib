@@ -2,32 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active,
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {    
+    /* -webkit-box-shadow:0 0 0 50px #575757 inset; */
+    /* -webkit-box-shadow:0 0 0 50px tran ; */
+    /* @apply autofill:shadow-transparent */
+    -webkit-text-size-adjust: auto;
+    /* -webkit-text-fill-color: transparent !important; */
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
+
+  textarea{
+    resize: none;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+@layer components {
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .custom-cancel-button{
+    @apply relative;
+  }
+  .custom-cancel-button::-webkit-search-cancel-button::after {
+    -webkit-user-modify: read-write !important;
+    content: "XDDDD";
+    @apply text-red-500 block w-4 h-4 absolute top-1 right-1  bg-yellow-200 bg-no-repeat !important
+    /* color: red;
+    display: block;
+    width: 10px;
+    height: 10px;
+
+    position: absolute;
+    top: 1px;
+    right: 1px;
+
+    background-color: yellow;
+    background-size: 10px;
+    background-position: top right;
+    background-repeat: no-repeat; */
+  }
+
+  .input{
+    /* @apply autofill:shadow-mint-300 autofill:bg-mint-300 autofill:text-mint-300 ; */
+    @apply outline-0 w-full truncate mx-2 bg-transparent;
+  }
+
+  .input-box{
+    @apply flex flex-row min-w-[200px] min-h-12 border-2 border-transparent bg-grey-30 focus-within:bg-grey-30 focus-within:border-mint-300 px-2
+    text-white rounded-lg items-center;
   }
 }

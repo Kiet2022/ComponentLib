@@ -1,4 +1,4 @@
-import { Button } from "@/components";
+import { Button } from "@/components/buttons";
 import { PlusHeroIcon } from "@/public/assets/icons";
 
 export default function ButtonLibrary() {

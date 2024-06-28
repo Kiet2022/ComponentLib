@@ -1,6 +1,4 @@
-interface IIconProps {
-  className?: string;
-}
+import { IIconProps } from "./types";
 
 export default function SpinnerIcon({ className }: IIconProps) {
   return (

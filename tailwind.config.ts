@@ -1,5 +1,9 @@
 import type { Config } from "tailwindcss";
+import { PluginCreator } from 'tailwindcss/types/config';
 
+const myPlugin: PluginCreator = ({ addVariant }) => {
+  addVariant('search-cancel', '&::-webkit-search-cancel-button');
+};
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -27,6 +31,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [myPlugin  ],
 };
 export default config;

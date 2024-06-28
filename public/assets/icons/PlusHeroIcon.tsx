@@ -1,6 +1,5 @@
-interface IIconProps{
-  className?: string;
-}
+import { IIconProps } from "./types";
+
 
 export function PlusHeroIcon( {className} : IIconProps) {
   return (

@@ -1,7 +1,7 @@
 import SpinnerIcon from "@/public/assets/icons/SpinnerIcon";
 import { ReactNode } from "react";
 
-interface ButtonProps {
+interface IButtonProps {
   label?: string;
   disabled?: boolean;
   loading?: boolean;
@@ -20,7 +20,7 @@ enum EVARIANT {
   SECONDARY_DARK = "secondary-dark",
 }
 
-const Button: React.FC<ButtonProps> = ({
+const Button: React.FC<IButtonProps> = ({
   label,
   disabled = false,
   loading,
@@ -40,7 +40,7 @@ const Button: React.FC<ButtonProps> = ({
   const baseButton = `w-fit h-fit flex flex-row items-center justify-center gap-2 box-border ${buttonSize[size]} ${className}`;
 
   const buttonStyle: { [key: string]: string } = {
-    [EVARIANT.DEFAULT]: `hover:text-mint-300 disabled:text-grey-30/80 ${
+    [EVARIANT.DEFAULT]: `hover:text-mint-300 disabled:text-grey-50 ${
       loading && "disabled:text-grey-90"
     }   ${baseButton}`,
     [EVARIANT.PRIMARY_WHITE]: `hover:bg-mint-300 hover:text-black rounded-lg  bg-white text-black active:bg-white ${
