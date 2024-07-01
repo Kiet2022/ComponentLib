@@ -40,8 +40,8 @@ export function RangePicker({
         endInput.value = maxValue.toString();
       }
     }
-    let start = Number(startInput.value)
-    let end = Number(endInput.value)
+    let start = Number(startInput.value);
+    let end = Number(endInput.value);
     if (end < start) {
       return;
     }
@@ -73,11 +73,11 @@ export function RangePicker({
                   name="startValue"
                   id="startValue"
                   defaultValue={minValue ? minValue : 0}
-                  className="input w-full text-center "
+                  className="input w-full text-center relative"
                 />
               </div>
               {" - "}
-              <div className="flex items-center rounded-full hover:bg-slate-200 h-full ml-1">
+              <div className="flex flex-col items-center rounded-full hover:bg-slate-200 h-full ml-1">
                 <input
                   type="number"
                   name="endValue"
