@@ -95,6 +95,14 @@
   .success-btn{
     @apply bg-green-300 hover:bg-green-400 active:bg-green-500 text-green-50;
   }
+
+  .grey-btn{
+    @apply text-slate-400 bg-slate-200  hover:bg-slate-300 active:bg-slate-400 active:text-slate-50;
+  }
+
+  .primary-btn{
+    @apply text-slate-50 bg-blue-500 hover:bg-blue-600 active:bg-blue-700;
+  }
   .input-box {
     @apply flex flex-row min-w-[200px] min-h-12 border-2 border-transparent bg-grey-30 focus-within:bg-grey-30 focus-within:border-mint-300 px-2
     text-white rounded-lg items-center;

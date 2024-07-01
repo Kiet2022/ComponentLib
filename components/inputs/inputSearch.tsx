@@ -22,7 +22,6 @@ export function InputSearch({
     className,
     inputStateStyle[getInputState(error, inputValue)]
   );
-  console.log("search er ", error);
   function onHandleChange(e: ChangeEvent<HTMLInputElement>) {
     setInputValue(e.target.value);
     if (props.onChange) {

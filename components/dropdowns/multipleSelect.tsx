@@ -32,7 +32,7 @@ export function MultipleSelect({ options, onHandleChange }: IDropdown) {
     if (!items.includes(item)) {
       let newSelectedItems = [...items];
       newSelectedItems.push(item);
-      setItems(newSelectedItems)
+      setItems(newSelectedItems);
       setIsOpenMenu(false);
     }
   }
@@ -44,7 +44,6 @@ export function MultipleSelect({ options, onHandleChange }: IDropdown) {
 
   function onSelectedChange() {
     if (onHandleChange) {
-      console.log('change')
       onHandleChange(items);
     }
   }
@@ -105,7 +104,10 @@ export function MultipleSelect({ options, onHandleChange }: IDropdown) {
                 <li
                   key={i}
                   onClick={() => onHandleSelectItem(i)}
-                  className={twMerge("last:rounded-b-lg px-2 hover:bg-slate-200 px-2", (items.includes(i) ? 'bg-slate-100' : '')) }
+                  className={twMerge(
+                    "last:rounded-b-lg px-2 hover:bg-slate-200 px-2",
+                    items.includes(i) ? "bg-slate-100" : ""
+                  )}
                 >
                   <div className="group/item relative flex items-center h-12 w-full">
                     <span className="text-lg">{i}</span>
