@@ -1,1 +1,1 @@
-export * from './dropDownChip'
+export * from './multipleSelect'

@@ -58,6 +58,14 @@
 }
 
 @layer components {
+  .row-center{
+    @apply flex justify-center items-center;
+  }
+
+  .col-center{
+    @apply flex flex-col justify-center items-center;
+  }
+
   .custom-cancel-button {
     @apply relative;
   }
@@ -81,10 +89,12 @@
   }
 
   .input {
-    /* @apply autofill:shadow-mint-300 autofill:bg-mint-300 autofill:text-mint-300 ; */
     @apply outline-0 w-full truncate mx-2 bg-transparent;
   }
 
+  .success-btn{
+    @apply bg-green-300 hover:bg-green-400 active:bg-green-500 text-green-50;
+  }
   .input-box {
     @apply flex flex-row min-w-[200px] min-h-12 border-2 border-transparent bg-grey-30 focus-within:bg-grey-30 focus-within:border-mint-300 px-2
     text-white rounded-lg items-center;
@@ -97,17 +107,16 @@
 
   .list-item {
     @apply flex flex-row gap-2;
-    @apply justify-evenly items-start;
+    @apply justify-between items-start;
     @apply w-full h-10 px-2;
     @apply bg-inherit hover:bg-slate-200;
   }
 
-  .style-scroll-b::-webkit-scrollbar{
-    
+  .style-scroll-b::-webkit-scrollbar{    
     position: absolute;
     bottom: 2px;
-    width: 5px;
-    height: 5px;
+    width: 10px;
+    height: 10px;
   }
 
   /* .style-scroll-b::-webkit-scrollbar-track{
@@ -121,7 +130,7 @@
   }
 
   .style-scroll-b::-webkit-scrollbar-thumb{
-    background: #E5E5E5;
+    background: #d2d2d2;
     border-radius: 10px;
   }
 
