@@ -43,6 +43,7 @@
     -webkit-text-size-adjust: auto;
     /* -webkit-text-fill-color: transparent !important; */
   }
+
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -51,18 +52,20 @@
   input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
   }
-
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+  }
   textarea {
     resize: none;
   }
 }
 
 @layer components {
-  .row-center{
+  .row-center {
     @apply flex justify-center items-center;
   }
 
-  .col-center{
+  .col-center {
     @apply flex flex-col justify-center items-center;
   }
 
@@ -92,15 +95,15 @@
     @apply outline-0 w-full truncate mx-2 bg-transparent;
   }
 
-  .success-btn{
+  .success-btn {
     @apply bg-green-300 hover:bg-green-400 active:bg-green-500 text-green-50;
   }
 
-  .grey-btn{
+  .grey-btn {
     @apply text-slate-400 bg-slate-200  hover:bg-slate-300 active:bg-slate-400 active:text-slate-50;
   }
 
-  .primary-btn{
+  .primary-btn {
     @apply text-slate-50 bg-blue-500 hover:bg-blue-600 active:bg-blue-700;
   }
   .input-box {
@@ -120,7 +123,7 @@
     @apply bg-inherit hover:bg-slate-200;
   }
 
-  .style-scroll-b::-webkit-scrollbar{    
+  .style-scroll-b::-webkit-scrollbar {
     position: absolute;
     bottom: 2px;
     width: 10px;
@@ -132,21 +135,21 @@
      border-radius: 10px; 
   } */
 
-  .style-scroll-b::-webkit-scrollbar-track{
+  .style-scroll-b::-webkit-scrollbar-track {
     box-shadow: inset 0 0 0px grey;
-     border-radius: 10px; 
+    border-radius: 10px;
   }
 
-  .style-scroll-b::-webkit-scrollbar-thumb{
+  .style-scroll-b::-webkit-scrollbar-thumb {
     background: #d2d2d2;
     border-radius: 10px;
   }
 
-  .style-scroll-b::-webkit-scrollbar-thumb:hover{
-    background: #ABFFC3;
+  .style-scroll-b::-webkit-scrollbar-thumb:hover {
+    background: #abffc3;
   }
 
-  .style-scroll-b::-webkit-scrollbar-thumb:active{
+  .style-scroll-b::-webkit-scrollbar-thumb:active {
     background: #01cd3b;
   }
 }
