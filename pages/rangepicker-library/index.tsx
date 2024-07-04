@@ -1,5 +1,4 @@
-import { DateCell, DateRangePicker, RangePicker } from "@/components/rangePicker";
-import TestDate from "@/components/rangePicker/testDate";
+import { DateRangePicker, RangePicker } from "@/components/rangePicker";
 import { useEffect, useState } from "react";
 
 export default function RangePickerPage() {
@@ -17,10 +16,10 @@ export default function RangePickerPage() {
     });
     setFilteredData(newFilteredData);
   }
-  
-  useEffect(()=>{
-    console.log('date', date)
-  }, [date])
+
+  useEffect(() => {
+    console.log("date", date);
+  }, [date]);
   return (
     <div className="flex flex-col  h-lvh bg-black  pt-10 gap-4 pl-4">
       <DateRangePicker onApply={setDate} />

@@ -10,7 +10,7 @@ export function Calendar({
   selectedRangeEnd,
   onHover,
   linkedDate,
-}: ICalendar) {
+}: Readonly<ICalendar>) {
   const currentDate = new Date();
   const [daysData, setDaysData] = useState<IDateCell[]>([]);
   const [calendarDate, setCalendarDate] = useState(time);
@@ -51,16 +51,17 @@ export function Calendar({
     );
 
     /////DISPLAY(BLUR OR MARKED) AND ONCLICK FUNCTION
-    if (date.getTime() < firstDayOfMonth.getTime() || date.getTime() > lastDayOfMonth.getTime()) {
+    if (
+      date.getTime() < firstDayOfMonth.getTime() ||
+      date.getTime() > lastDayOfMonth.getTime()
+    ) {
       dayData.display = "blur";
       dayData.onClick = () => {
         setCalendarDate(date);
         onHandleSelectedDay(date);
       };
     } else {
-      if (
-        date.toDateString().match(currentDate.toDateString())
-      ) {
+      if (date.toDateString() === currentDate.toDateString()) {
         dayData.display = "marked";
       }
       dayData.onClick = () => {
@@ -81,19 +82,21 @@ export function Calendar({
     if (cellIndex < 1 || cellIndex > daysOfMonth) {
       return cell;
     }
-    if (selectedRangeEnd !== undefined || selectedRangeStart !== undefined) {
+    if (selectedRangeStart !== undefined) {
       if (
         date.toDateString() == selectedRangeEnd?.toDateString() ||
         date.toDateString() == selectedRangeStart?.toDateString()
       ) {
         cell.display = "selected";
+        return cell;
       }
 
-      if (selectedRangeEnd !== undefined && selectedRangeStart !== undefined) {
+      if (selectedRangeEnd !== undefined) {
         if (date > selectedRangeStart && date < selectedRangeEnd) {
-          if (date?.getDate() > selectedRangeStart?.getDate()) {
-            cell.display = "highlighted";
-          } else if (date?.getDate() < selectedRangeEnd?.getDate()) {
+          if (
+            date?.getDate() > selectedRangeStart?.getDate() ||
+            date?.getDate() < selectedRangeEnd?.getDate()
+          ) {
             cell.display = "highlighted";
           }
         }
@@ -126,7 +129,7 @@ export function Calendar({
     if (!isDayInMonth(value)) {
       return general;
     }
-    ////HOVER
+    ////DISPLAY(HOVER)
     if (selectedRangeEnd === undefined && selectedRangeStart !== undefined) {
       let hoverStyle = "";
 
@@ -140,8 +143,8 @@ export function Calendar({
         if (min <= currentValue && currentValue <= max) {
           hoverStyle = "border-black  border-x-transparent ";
           let expandStyle = "";
-          if (value.toDateString().match(linkedDate.toDateString())) {
-            if (value.toDateString().match(selectedRangeStart.toDateString())) {
+          if (value.toDateString() === linkedDate.toDateString()) {
+            if (value.toDateString() === selectedRangeStart.toDateString()) {
               return twMerge(
                 general,
                 hoverStyle,
@@ -153,7 +156,7 @@ export function Calendar({
                 ? "rounded-l-full pl-0 ml-1 border-l-black"
                 : "rounded-r-full pr-0 mr-1 border-r-black";
           } else if (
-            value.toDateString().match(selectedRangeStart.toDateString())
+            value.toDateString() === selectedRangeStart.toDateString()
           ) {
             expandStyle =
               max === linkValue
@@ -192,7 +195,7 @@ export function Calendar({
       if (
         value &&
         selectedRangeStart &&
-        value.toDateString().match(selectedRangeStart.toDateString())
+        value.toDateString() === selectedRangeStart.toDateString()
       ) {
         return twMerge(general, "bg-blue-100 rounded-l-full pl-0 ml-1");
       } else {
@@ -225,7 +228,7 @@ export function Calendar({
         <div id="calendar-body" className="grid grid-cols-7 gap-y-2">
           {daysData.map((day, index) => (
             <div
-              key={index}
+              key={day.value?.toDateString()}
               className={cellStyle(day.value, day.display)}
               onMouseEnter={() => {
                 if (onHover) {

@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Icon from "../../icons/icon";
 import { useOutsideClick } from "@/shared";
 import { Calendar } from "./calendar";
 import { IDateRangePicker } from "./type";
 import { twMerge } from "tailwind-merge";
 
-export function DateRangePicker({ onApply }: IDateRangePicker) {
+export function DateRangePicker({ onApply }: Readonly<IDateRangePicker>) {
   const monthName = [
     "January",
     "February",
@@ -31,13 +31,11 @@ export function DateRangePicker({ onApply }: IDateRangePicker) {
   const [leftCalendar, setLeftCalendar] = useState(
     new Date(rightCalendar.getFullYear(), rightCalendar.getMonth(), 0)
   );
-  const [isSetStartTime, setIsSetStartTime] = useState(true);
 
   const onHandleSelectedDate = (
     selectedDate: Date,
     isLeftSelected: boolean
   ) => {
-    setIsSetStartTime(!isSetStartTime);
     let calendar = isLeftSelected
       ? new Date(leftCalendar)
       : new Date(rightCalendar);
@@ -90,12 +88,16 @@ export function DateRangePicker({ onApply }: IDateRangePicker) {
   };
 
   const onChangeMonth = (isToLeft: boolean) => {
-    if(isToLeft){
-      setRightCalendar(leftCalendar)
-      setLeftCalendar(new Date(leftCalendar.getFullYear(), leftCalendar.getMonth()-1))
-    }else{
-      setLeftCalendar(rightCalendar)
-      setRightCalendar(new Date(rightCalendar.getFullYear(), rightCalendar.getMonth()+1))
+    if (isToLeft) {
+      setRightCalendar(leftCalendar);
+      setLeftCalendar(
+        new Date(leftCalendar.getFullYear(), leftCalendar.getMonth() - 1)
+      );
+    } else {
+      setLeftCalendar(rightCalendar);
+      setRightCalendar(
+        new Date(rightCalendar.getFullYear(), rightCalendar.getMonth() + 1)
+      );
     }
   };
 
@@ -123,7 +125,7 @@ export function DateRangePicker({ onApply }: IDateRangePicker) {
       <div
         onClick={() => setIsOpenMenu(true)}
         className={twMerge(
-          "border row-center font-bold w-fit h-12 rounded-lg bg-white border border-slate-800",
+          "row-center font-bold w-fit h-12 rounded-lg bg-white border border-slate-800",
           isOpenMenu ? "bg-blue-200 text-blue-600" : ""
         )}
       >
@@ -139,7 +141,6 @@ export function DateRangePicker({ onApply }: IDateRangePicker) {
             className="input"
             value={formatDate(startTime)}
             onChange={(e) => setStartTime(new Date(e.target.value))}
-            onClick={() => setIsSetStartTime(true)}
           />
         </div>
         <div>{" - "}</div>
@@ -151,7 +152,6 @@ export function DateRangePicker({ onApply }: IDateRangePicker) {
             className="input"
             value={formatDate(endTime)}
             onChange={(e) => setEndTime(new Date(e.target.value))}
-            onClick={() => setIsSetStartTime(false)}
           />
         </div>
       </div>
@@ -164,7 +164,7 @@ export function DateRangePicker({ onApply }: IDateRangePicker) {
           {/* //////////HEADER//////////// */}
           <div className="flex justify-between px-10 pt-4">
             <div className="flex gap-8 text-center text-2xl font-bold my-2">
-              <button onClick={()=> onChangeMonth(true)}>{" < "}</button>{" "}
+              <button onClick={() => onChangeMonth(true)}>{" < "}</button>{" "}
               <div>
                 {monthName[leftCalendar.getMonth()]}{" "}
                 {leftCalendar.getFullYear()}
@@ -176,7 +176,7 @@ export function DateRangePicker({ onApply }: IDateRangePicker) {
                 {monthName[rightCalendar.getMonth()]}{" "}
                 {rightCalendar.getFullYear()}
               </div>
-              <button onClick={()=> onChangeMonth(false)}>{" > "}</button>
+              <button onClick={() => onChangeMonth(false)}>{" > "}</button>
             </div>
           </div>
           {/* ////////////BODY///////// */}
