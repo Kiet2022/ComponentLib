@@ -1,4 +1,4 @@
-import { MultipleSelect } from "@/components";
+import { DropdownSelect, MultipleSelect } from "@/components";
 import { useState } from "react";
 
 export default function DropdownLibraryPage() {
@@ -27,6 +27,7 @@ export default function DropdownLibraryPage() {
             </span>
           ))}
       </div>
+      <DropdownSelect options={options} defaultValue={options[0]}/>
       <MultipleSelect options={options} onHandleChange={onChangeSelectedItem} />
       <div className="bg-mint-300 w-full">Check Check Chek</div>
     </div>

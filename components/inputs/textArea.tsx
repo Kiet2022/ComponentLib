@@ -12,7 +12,7 @@ export const TextArea = ({
   loading,
   isValid,
   className,
-  error,
+  error = null,
   success,
   wordLimit,
   externalCounting = true,
@@ -24,7 +24,7 @@ export const TextArea = ({
   const [wordCount, setWordCount] = useState(0);
 
   const inputStyle = twMerge(
-    "input-box relative pb-4",
+    "input-box box-black relative pb-4",
     className,
     inputStateStyle[getInputState(error, inputValue)]
   );

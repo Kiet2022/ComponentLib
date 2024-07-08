@@ -232,7 +232,9 @@ export function Calendar({
               className={cellStyle(day.value, day.display)}
               onMouseEnter={() => {
                 if (onHover) {
-                  onHover(day.value);
+                  if (!day.disable || day.display !=='blur') {
+                    onHover(day.value);
+                  }
                 }
               }}
             >

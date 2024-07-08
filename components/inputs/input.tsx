@@ -14,7 +14,7 @@ export const Input = ({
   leftIcon,
   rightIcon,
   className,
-  error,
+  error = null,
   success,
   ...props
 }: IInputProps) => {
@@ -23,7 +23,7 @@ export const Input = ({
   >(props.value ? props.value : "");
 
   const inputStyle = twMerge(
-    "input-box",
+    "input-box box-black",
     className,
     inputStateStyle[getInputState(error, inputValue)]
   );

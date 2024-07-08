@@ -3,15 +3,13 @@ import { useEffect, useState } from "react";
 import Icon from "../icons/icon";
 import { useDebouncedCallback } from "use-debounce";
 import { twMerge } from "tailwind-merge";
+import { IDropdown } from "./type";
 
-export interface IDropdown {
-  options: string[];
-  onHandleChange?: (data: string[]) => void;
-}
+
 
 export function MultipleSelect({ options, onHandleChange }: IDropdown) {
   const [items, setItems] = useState<string[]>([]);
-  const [searchItem, setSearchItem] = useState<string[]>(options);
+  const [searchItem, setSearchItem] = useState<any[]>(options);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const ref = useOutsideClick(() => {
     setIsOpenMenu(false);
@@ -22,9 +20,11 @@ export function MultipleSelect({ options, onHandleChange }: IDropdown) {
       setSearchItem(options);
       return;
     }
-    let filteredItems = options.filter((item) =>
-      item.toLowerCase().includes(value)
-    );
+    let filteredItems = (typeof options[0] === 'string') ? options.filter((item) =>
+      (item as string).toLowerCase().includes(value)
+    ) : options.filter((item) =>
+      item == value
+    ) ;
     setSearchItem(filteredItems);
   }, 1000);
 
@@ -57,7 +57,7 @@ export function MultipleSelect({ options, onHandleChange }: IDropdown) {
       {/* ////////RESULTS BAR////////// */}
       <div className="flex" onClick={() => setIsOpenMenu(!isOpenMenu)}>
         <div className=" rounded-l-full w-10 h-20 bg-white"></div>
-        <div className="relative flex items-center gap-2 w-[400px] bg-white h-20 style-scroll-b overflow-scroll ">
+        <div className="relative flex items-center gap-2 w-[400px] bg-white h-20 style-scroll-b overflow-auto ">
           {items?.map((i) => (
             <div key={i} className="w-fit">
               <div className="row-center gap-2 min-w-16 rounded-full py-2 px-4  text-slate-400 border-2 border-slate-300 hover:border-mint-300 font-bold bg-slate-200">
@@ -94,7 +94,7 @@ export function MultipleSelect({ options, onHandleChange }: IDropdown) {
 
           {/* ////////OPTIONS BAR////////// */}
 
-          <ul className="list w-full border-0 rounded-b-lg max-h-[300px] overflow-y-scroll style-scroll-b">
+          <ul className="list w-full border-0 rounded-b-lg max-h-[300px] overflow-y-auto style-scroll-b">
             {searchItem?.length === 0 ? (
               <div className="w-full h-12 bg-slate-300 row-center text-slate-100 font-bold text-lg rounded-b-lg">
                 Data not found!

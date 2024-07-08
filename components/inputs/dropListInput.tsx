@@ -17,7 +17,7 @@ export const DropListInput = ({
   loading,
   isValid,
   className,
-  error,
+  error = null,
   success,
   ...props
 }: IInputProps) => {
@@ -34,7 +34,7 @@ export const DropListInput = ({
 
   const inputState = getInputState(error, inputValue);
   const inputStyle = twMerge(
-    "input-box",
+    "input-box box-black",
     className,
     inputStateStyle[inputState]
   );

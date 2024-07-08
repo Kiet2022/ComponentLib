@@ -10,7 +10,7 @@ export function InputSearch({
   loading,
   isValid,
   className,
-  error,
+  error = null,
   ...props
 }: IInputProps) {
   const [inputValue, setInputValue] = useState<
@@ -18,7 +18,7 @@ export function InputSearch({
   >(props.value ? props.value : "");
 
   const inputStyle = twMerge(
-    "input-box",
+    "input-box box-black",
     className,
     inputStateStyle[getInputState(error, inputValue)]
   );
@@ -34,7 +34,10 @@ export function InputSearch({
       <div className=" text-white mb-2">{label && label}</div>
       {/* ////BODY///// */}
       <div className={inputStyle}>
-        <Icon name="search" className="mr-2" />
+        <div>
+          <Icon name="search" className="mr-2" style={{width: '16px'}}/>
+        </div>
+
         <input
           {...props}
           type="search"

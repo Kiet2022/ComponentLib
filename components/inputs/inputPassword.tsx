@@ -15,7 +15,7 @@ export const InputPassword = ({
   isValid,
   leftIcon,
   className,
-  error,
+  error = null,
   success,
   ...props
 }: IInputProps) => {
@@ -25,7 +25,7 @@ export const InputPassword = ({
   const [isHidePassword, setIsHidePassword] = useState(true);
 
   const inputStyle = twMerge(
-    "input-box",
+    "input-box box-black",
     className,
     inputStateStyle[getInputState(error, inputValue)]
   );
@@ -47,7 +47,7 @@ export const InputPassword = ({
     }
   }
   return (
-    <div >
+    <div>
       {/* ///////TOP LABEL/////// */}
       <div className="text-white mb-2">{label && label}</div>
 

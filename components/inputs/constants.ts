@@ -37,5 +37,5 @@ export const getInputState = (
 export const inputStateStyle = {
   default: "",
   error: "border-red-500 bg-red-500/30",
-  success: "border-green-500 bg-green-500/30",
+  success: "border-green-500 bg-green-500/30 ",
 };
